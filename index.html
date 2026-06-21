@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>My Image Gallery</h1>
+
+<input type="text" id="searchBox" placeholder="Search images...">
+
+<!-- BUTTONS -->
+<div class="buttons">
+    <button onclick="filterImages('all')">All</button>
+    <button onclick="filterImages('nature')">Nature</button>
+    <button onclick="filterImages('car')">Cars</button>
+    <button onclick="filterImages('animal')">Animals</button>
+    <button onclick="filterImages('tech')">Tech</button>
+</div>
+
+<!-- IMAGES -->
+<div class="gallery">
+
+    <img src="https://picsum.photos/300/200?1" class="nature">
+    <img src="https://picsum.photos/300/200?2" class="car">
+    <img src="https://picsum.photos/300/200?3" class="nature">
+    <img src="https://picsum.photos/300/200?4" class="tech">
+    <img src="https://picsum.photos/300/200?5" class="animal">
+    <img src="https://picsum.photos/300/200?6" class="car">
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

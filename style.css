@@ -1,0 +1,59 @@
+function filterImages(category) {
+    let images = document.querySelectorAll(".gallery img");
+
+    images.forEach(img => {
+        if (category === "all") {
+            img.style.display = "block";
+        } else {
+            if (img.classList.contains(category)) {
+                img.style.display = "block";
+            } else {
+                img.style.display = "none";
+            }
+        }
+    });
+}
+
+// 🔥 IMAGE CLICK + DOWNLOAD BUTTON
+document.querySelectorAll(".gallery img").forEach(img => {
+
+    img.addEventListener("click", function () {
+
+        let fullScreen = document.createElement("div");
+        fullScreen.id = "fullscreen";
+
+        fullScreen.innerHTML = `
+            <div class="popup">
+                <img src="${img.src}">
+                <br>
+                <a href="${img.src}" download>
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+        `;
+
+        document.body.appendChild(fullScreen);
+
+        fullScreen.addEventListener("click", function () {
+            fullScreen.remove();
+        });
+    });
+});
+.popup {
+    text-align: center;
+}
+
+.download-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: green;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.download-btn:hover {
+    background: darkgreen;
+}
